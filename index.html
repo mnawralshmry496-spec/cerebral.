@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مخي — مهامي ومواعيدي</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<header class="topbar"><div class="brand"><div class="logo">✦</div><div><h1>مخي</h1><p>رتّب يومك، وخلّ بالك مرتاح</p></div></div><div class="date-label" id="todayLabel"></div></header>
+<main class="layout">
+<section class="welcome"><div><h2 id="greeting">أهلاً بيك 👋</h2><p>خطوة صغيرة اليوم، إنجاز أكبر باچر.</p></div><button class="primary" id="addTaskTop">＋ إضافة مهمة</button></section>
+<section class="stats"><div class="stat"><div class="stat-icon">☑</div><div><small>كل المهام</small><strong id="totalCount">0</strong></div></div><div class="stat"><div class="stat-icon">◷</div><div><small>قيد الإنجاز</small><strong id="pendingCount">0</strong></div></div><div class="stat"><div class="stat-icon">✓</div><div><small>مكتملة</small><strong id="doneCount">0</strong></div></div><div class="stat"><div class="stat-icon">▦</div><div><small>مواعيد قادمة</small><strong id="apptCount">0</strong></div></div></section>
+<section class="content"><div class="panel"><div class="panel-head"><h3>مهامي</h3><div class="filters"><button class="filter active" data-filter="all">الكل</button><button class="filter" data-filter="pending">غير مكتملة</button><button class="filter" data-filter="done">مكتملة</button></div></div><div class="task-list" id="taskList"></div><button class="quick-add" id="addTaskBottom">＋ أضف مهمة جديدة</button></div>
+<div class="panel"><div class="panel-head"><h3>مواعيدي</h3><button class="filter" id="addApptTop">＋ موعد</button></div><div class="filters appt-filters"><button class="filter active" data-appt-filter="all">الكل</button><button class="filter" data-appt-filter="pending">غير مكتملة</button><button class="filter" data-appt-filter="done">مكتملة</button></div><div class="appointments" id="appointmentList"></div><button class="quick-add" id="addApptBottom">＋ أضف موعد جديد</button></div></section>
+</main></div>
+<div class="modal-backdrop" id="modalBackdrop"><section class="modal"><h3 id="modalTitle">إضافة مهمة</h3><form id="entryForm"><div class="form-grid"><div class="field full"><label for="entryTitle">العنوان *</label><input id="entryTitle" required maxlength="100" placeholder="مثلاً: أدرس الإنكليزي"></div><div class="field"><label for="entryType">النوع</label><select id="entryType"><option value="task">مهمة</option><option value="appointment">موعد</option></select></div><div class="field"><label for="entryDate">التاريخ *</label><input id="entryDate" type="date" required></div><div class="field" id="timeField"><label for="entryTime">الوقت</label><input id="entryTime" type="time"></div><div class="field" id="priorityField"><label for="entryPriority">الأولوية</label><select id="entryPriority"><option value="normal">عادية</option><option value="high">عالية</option><option value="low">منخفضة</option></select></div><div class="field full"><label for="entryNote">ملاحظات (اختياري)</label><textarea id="entryNote" rows="3" maxlength="300" placeholder="تفاصيل إضافية..."></textarea></div></div><div class="modal-actions"><button class="primary" type="submit">حفظ</button><button class="secondary" type="button" id="cancelModal">إلغاء</button></div></form></section></div><div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body></html>
